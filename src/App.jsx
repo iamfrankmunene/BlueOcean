@@ -1,19 +1,24 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import { store } from './store/index.js'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/header'
 import Homepage from './components/homepage'
+import Rooms from './components/rooms.jsx'
+import Culinary from './components/culinary.jsx'
+import Experiences from './components/experiences.jsx'
 import Footer from './components/footer'
 
 function App() {
   return (
-    <Provider store={store}>
-      <div>
-        <Header />
-        <Homepage />
-        <Footer />
-      </div>
-    </Provider>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/culinary" element={<Culinary />} />
+        <Route path="/experiences" element={<Experiences />} />
+      </Routes>
+      <Footer />
+    </Router>
   )
 }
 

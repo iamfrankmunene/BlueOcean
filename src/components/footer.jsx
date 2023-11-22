@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Button,Container, Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#3c2d20', color: 'white' }}>
+    <div>
+    <footer style={{ backgroundColor: '#3c2d20', color: 'white', marginTop:'60px',position: 'relative', top: '-40px' }}>
       <Container>
         <Row className="align-items-center">
           <Col xs={3} md={3} className="text-md-right mb-3 mb-md-0 mt-3 mt-md-0">
@@ -34,6 +35,10 @@ const Footer = () => {
         </Row>
       </Container>
     </footer>
+    <Button style={{ backgroundColor: '#B30B11', position: 'fixed', bottom: '0px', zIndex: '1000', width:'100%', height:'40px',borderRadius: '0px' }}>
+    Book Now
+  </Button>
+  </div>
   )
 }
 

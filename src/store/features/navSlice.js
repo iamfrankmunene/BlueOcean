@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const navSlice = createSlice({
-  name: 'menu',
+  name: 'nav',
   initialState: {
-    menuOpen: false,
+    navOpen: false,
   },
   reducers: {
-    toggleMenu: (state, action) => {
-      state.menuOpen = !state.menuOpen
+    toggleNav: (state) => {
+      state.navOpen = !state.navOpen
     },
-  },
+  }
 })
 
-export const { toggleMenu } = navSlice.actions
-export const selectMenuOpen = (state) => state.menu.menuOpen // Selector for getting the menu state
+export const { toggleNav } = navSlice.actions
+export const selectNavOpen = (state) => state.nav.navOpen
 export default navSlice.reducer

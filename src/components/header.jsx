@@ -1,14 +1,21 @@
 import React from 'react'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectMenuOpen, toggleMenu } from '../store/features/navSlice'
+import { selectNavOpen, toggleNav } from '../store/features/navSlice'
+import { selectRoomVisibility, toggleRooms } from '../store/features/roomsVisibilitySlice'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
-  const menuOpen = useSelector(selectMenuOpen)
+  const navOpen = useSelector(selectNavOpen)
+  const roomVisibility = useSelector(selectRoomVisibility)
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    dispatch(toggleMenu())
+    dispatch(toggleNav())
+  }
+
+  const handleClickRooms = () => {
+    dispatch(toggleRooms())
   }
 
   return (
@@ -25,20 +32,45 @@ const Header = () => {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" onClick={handleClick}>
-          {menuOpen ? (
-            <span style={{ fontSize: '1.25rem', color: '#fff' }}>&times</span> // X icon when menu is open
+          {navOpen ? (
+            <span style={{ fontSize: '1.25rem', color: '#fff' }}>X</span> // X icon when menu is open
           ) : (
             <span className="navbar-toggler-icon" /> // Hamburger icon when menu is closed
           )}
         </Navbar.Toggle>
-        <Navbar.Collapse id="navbar-nav" className={`justify-content-end ${menuOpen ? 'show' : ''}`}>
+        <Navbar.Collapse id="navbar-nav" className={`justify-content-end ${navOpen ? 'show' : ''}`}>
           <Nav>
-            <Nav.Link href="/rooms">Rooms</Nav.Link>
-            <Nav.Link href="/restaurant">Restaurant</Nav.Link>
-            <NavDropdown title="Facilities" id="basic-nav-dropdown">
-              <NavDropdown.Item>Swimming</NavDropdown.Item>
-              <NavDropdown.Item>Water Sports</NavDropdown.Item>
-            </NavDropdown>
+            <NavLink
+              onClick={handleClickRooms}
+              to="/rooms"
+              style={{
+    color: '#eceff1',
+    textDecoration: 'none',
+    marginRight: '20px'
+  }}
+            >
+              Rooms
+            </NavLink>
+            <NavLink
+              to="/culinary"
+              style={{
+    color: '#eceff1',
+    textDecoration: 'none',
+    marginRight: '20px'
+  }}
+            >
+              Culinary
+            </NavLink>
+            <NavLink
+              to="/experiences"
+              style={{
+    color: '#eceff1',
+    textDecoration: 'none',
+    marginRight: '20px'
+  }}
+            >
+              experiences
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,15 +1,15 @@
 import React from 'react'
-import { Button, Card, Container, Row, Col } from 'react-bootstrap'
+import { Card, Container, Row, Col } from 'react-bootstrap'
 
 const Homepage = () => {
   return (
     <div>
       <img
   alt="Nyali Beach"
-  src="../../image/NyaliBeach.jpg"
+  src="../../image/Nyali-Beach.jpg"
   style={{
     width: '100%',
-    height: '400px',
+    height: '81vh',
     objectFit: 'cover',
     display: 'flex',
     alignItems: 'center',
@@ -66,10 +66,6 @@ const Homepage = () => {
           </Col>
         </Row>
       </Container>
-
-      <Button style={{ backgroundColor: '#B30B11', position: 'fixed', bottom: '20px', right: '20px', zIndex: '1000' }}>
-        Book Now
-      </Button>
     </div>
   )
 }

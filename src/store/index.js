@@ -1,9 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import navReducer from './features/navSlice'
+import rootReducer from './rootReducer'
 
 export const store = configureStore({
-  reducer: {
-    menu: navReducer,
-    // Add other reducers if needed
-  },
-})
+  reducer: rootReducer,
+});
