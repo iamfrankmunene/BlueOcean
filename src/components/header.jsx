@@ -21,16 +21,19 @@ const Header = () => {
   return (
     <Navbar style={{ background: 'linear-gradient(to right, #00bcd4, #0072c6)' }} variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
-          <img
-            alt="BlueOcean Logo"
-            src="../image/BlueOcean-logo.jpg"
-            width="50"
-            height="50"
-            className="d-inline-block align-top"
-            style={{ margin: '0px', padding: '0px' }}
-          />
-        </Navbar.Brand>
+      <Navbar.Brand href="/">
+  <div className="d-flex align-items-center">
+    <img
+      alt="BlueOcean Logo"
+      src="../image/BlueOcean-logo.jpg"
+      width="50"
+      height="50"
+      className="d-inline-block align-top"
+      style={{ padding: '4px'}}
+    />
+    <h3 className="d-inline-block align-bottom mt-2">Blue Oceans</h3>
+  </div>
+</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" onClick={handleClick}>
           {navOpen ? (
             <span style={{ fontSize: '1.25rem', color: '#fff' }}>X</span> // X icon when menu is open
@@ -69,7 +72,7 @@ const Header = () => {
     marginRight: '20px'
   }}
             >
-              experiences
+              Experiences
             </NavLink>
           </Nav>
         </Navbar.Collapse>

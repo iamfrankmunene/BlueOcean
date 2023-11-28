@@ -16,8 +16,7 @@ const Homepage = () => {
     justifyContent: 'center',
   }}
 />
-
-      <Container className="mt-4">
+      <Container className="mt-4" style={{textAlign: 'center' }}>
         <Row>
           <Col>
             <h2 style={{ marginBottom: '20px' }}>About Us</h2>
@@ -31,12 +30,12 @@ const Homepage = () => {
         </Row>
       </Container>
 
-      <Container className="mt-4">
+      <Container className="mt-4" style={{ textAlign: 'center' }}>
         <Row className="mt-4">
           <Col>
             <h2 style={{ marginBottom: '20px' }}>Reviews</h2>
             <div className="d-flex flex-wrap">
-              <Card style={{ width: '18rem', margin: '10px', backgroundColor: '#20c997', color: 'white' }}>
+              <Card style={{ width: '22rem', margin: '10px'}}>
                 <Card.Body>
                   <Card.Title>John Doe</Card.Title>
                   <Card.Text>
@@ -45,7 +44,7 @@ const Homepage = () => {
                 </Card.Body>
               </Card>
 
-              <Card style={{ width: '18rem', margin: '10px', backgroundColor: '#20c997', color: 'white' }}>
+              <Card style={{ width: '22rem', margin: '10px'}}>
                 <Card.Body>
                   <Card.Title>Jane Smith</Card.Title>
                   <Card.Text>
@@ -54,9 +53,9 @@ const Homepage = () => {
                 </Card.Body>
               </Card>
 
-              <Card style={{ width: '18rem', margin: '10px', backgroundColor: '#20c997', color: 'white' }}>
+              <Card style={{ width: '22rem', margin: '10px'}}>
                 <Card.Body>
-                  <Card.Title>Mark Johnson</Card.Title>
+                <Card.Title>Mark Johnson</Card.Title>
                   <Card.Text>
                     Exceptional service and attention to guest satisfaction. The ambiance and amenities exceeded our expectations.
                   </Card.Text>
@@ -65,6 +64,9 @@ const Homepage = () => {
             </div>
           </Col>
         </Row>
+        <a href="/all-reviews" style={{ color: '#888' }}>
+                Read All Reviews
+              </a>
       </Container>
     </div>
   )
