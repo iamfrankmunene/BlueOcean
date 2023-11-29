@@ -73,7 +73,3 @@ We welcome contributions from the community! If you want to contribute to BlueOc
 3. Make your changes.
 4. Submit a pull request.
 
-## License
-
-This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
-
