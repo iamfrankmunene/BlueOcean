@@ -13,13 +13,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Cache Node Modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install  
 
       - name: Run Tests
         run: npm test
@@ -33,13 +41,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Cache Node Modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install  
 
       - name: Deploy to GitHub Pages
         run: |
