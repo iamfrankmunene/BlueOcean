@@ -11,7 +11,6 @@ Welcome to the BlueOcean repository! This project aims to provide insight to the
   - [Installation](#installation)
   - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 
 ## Overview
