@@ -37,7 +37,7 @@ const initialRoomData = [
     photo: '../../../image/RoyalPenthouseSuite.jpg',
     price: 1000,
   }
-];
+]
 
 const roomSlice = createSlice({
   name: 'room',
@@ -45,8 +45,8 @@ const roomSlice = createSlice({
     roomData: initialRoomData,
   },
   reducers: {},
-});
+})
 
-export const selectRoomData = (state) => state.room.roomData;
+export const selectRoomData = (state) => state.room.roomData
 
-export default roomSlice.reducer;
+export default roomSlice.reducer

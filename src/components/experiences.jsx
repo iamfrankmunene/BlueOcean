@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Card, Button, Container, Row, Col } from 'react-bootstrap';
-import ReactCardFlip from 'react-card-flip';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleDescription, selectExperiencesFlip } from '../store/features/cardFlipSlice';
+import React, { useState } from 'react'
+import { Card, Button, Container, Row, Col } from 'react-bootstrap'
+import ReactCardFlip from 'react-card-flip'
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleDescription, selectExperiencesFlip } from '../store/features/cardFlipSlice'
 
 const Experiences = () => {
-  const dispatch = useDispatch();
-  const experiencesData = useSelector(selectExperiencesFlip);
-  const [flippedIndex, setFlippedIndex] = useState(null);
+  const dispatch = useDispatch()
+  const experiencesData = useSelector(selectExperiencesFlip)
+  const [flippedIndex, setFlippedIndex] = useState(null)
 
   const handleCardClick = (index) => {
-    setFlippedIndex((prevIndex) => (prevIndex === index ? null : index));
-    dispatch(toggleDescription({ cardIndex: index })); // flip the card when clicked
-  };
+    setFlippedIndex((prevIndex) => (prevIndex === index ? null : index))
+    dispatch(toggleDescription({ cardIndex: index })) // flip the card when clicked
+  }
 
   return (
     <Container className="mt-4">
@@ -59,7 +59,7 @@ const Experiences = () => {
         ))}
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default Experiences;
+export default Experiences

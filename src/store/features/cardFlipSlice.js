@@ -29,20 +29,20 @@ const restaurants = [
     },
     reducers: {
         toggleDescription: (state, action) => {
-          const { cardIndex } = action.payload;
-          const restaurant = state.restaurants.find((r) => r.index === cardIndex);
-          const experience = state.experiences.find((e) => e.index === cardIndex);
+          const { cardIndex } = action.payload
+          const restaurant = state.restaurants.find((r) => r.index === cardIndex)
+          const experience = state.experiences.find((e) => e.index === cardIndex)
     
           if (restaurant) {
-            restaurant.showBack = !restaurant.showBack;
+            restaurant.showBack = !restaurant.showBack
           } else if (experience) {
-            experience.showBack = !experience.showBack;
+            experience.showBack = !experience.showBack
           }
         },
       },
-  });
+  })
   
-  export const { toggleDescription } = cardFlipSlice.actions;
-  export const selectRestaurantsFlip = (state) => state.cardFlip.restaurants;
-  export const selectExperiencesFlip = (state) => state.cardFlip.experiences;
+  export const { toggleDescription } = cardFlipSlice.actions
+  export const selectRestaurantsFlip = (state) => state.cardFlip.restaurants
+  export const selectExperiencesFlip = (state) => state.cardFlip.experiences
   export default cardFlipSlice.reducer
