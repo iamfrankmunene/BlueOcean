@@ -13,5 +13,6 @@ export default defineConfig({
     optimizeDeps: {
       include: ['src/main.jsx'],
     },
+    target: 'modules',
   },
 })
