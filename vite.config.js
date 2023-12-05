@@ -1,19 +1,16 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [react()],
-  base: "https://blueoceans.onrender.com",
   build: {
     rollupOptions: {
-      input: {
-        main: 'src/main.jsx', 
+      input: 'src/main.jsx', 
+      output: {
+        format: 'es', // Set the format to 'es' for JavaScript modules
       },
     },
-    optimizeDeps: {
-      include: ['src/main.jsx'],
-    },
-    target: 'modules',
   },
 })
